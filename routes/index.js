@@ -1,8 +1,16 @@
-
+var pgtool = require('../dbtool/pgdbtool');
 /*
  * GET home page.
  */
-//var kit={:''}
+var kit={menu:''}
+
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+	kit.menu="tuijian";//推介menu
+ 	console.log(kit);
+ 	console.log(pgtool.getTime());
+ 	// pgtool.getTime();
+ 	res.render('index', kit);
+
 };
+
+

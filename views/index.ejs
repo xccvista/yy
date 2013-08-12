@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-	<h1>Hello world</h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<% include header %>
+    <div class="container" id="dynamic-imgs">
+        <div id="target" style="">
+            <img src="ads/add1.png" class="imgCont test">
+            <img src="ads/add3.png" class="imgCont test">
+            <img src="ads/add1.png" class="imgCont test">
+
+        </div>
+        <div id="indexDom">
+            <span class="indexDom-num" style="background:black;">&nbsp;</span>
+            <span class="indexDom-num">&nbsp;</span>
+            <span class="indexDom-num">&nbsp;</span>
+        </div>
+    </div>
+<% include footer %>

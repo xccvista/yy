@@ -1,0 +1,423 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}*/
+
+/*
+  页面的宽度类型属性有：
+    320
+    360
+    400 三星 note1
+    设计稿的宽度比例 480
+**/
+/*html5 css reset*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,
+cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,dialog,
+figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	vertical-align:baseline;
+	background:transparent
+}
+html{font-size:62.5%!important}body{line-height:1;background:#f5f5f5}
+article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{
+	content:'';content:none
+}
+a{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:700}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted #000;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
+/*page-frame*/
+.wraper {
+  width: 100%;
+  min-width: 320px;
+  max-height: 560px;
+}
+/*common ui tool*/
+.g-left {
+  float: left;
+}
+.g-right {
+  float: right;
+}
+.fs12 {
+  font-size: 1.2rem;
+}
+.fs-h12 {
+  line-height: 2rem;
+}
+.fs14 {
+  font-size: 1.4rem;
+}
+.fs16 {
+  font-size: 1.6rem;
+}
+.fs18 {
+  font-size: 1.8rem;
+}
+.fs20 {
+  font-size: 2rem;
+}
+.c-white {
+  color: #fff;
+}
+.c-gray {
+  color: #505050;
+}
+.c-light-gray {
+  color: #666;
+}
+.bg-orange {
+  background: #E3A360;
+}
+.bg-light-blue {
+  background: #81bed0;
+}
+.left-trigger {
+  background: url("../images/left-trigger.png") no-repeat;
+  display: block;
+  width: 13px;
+  height: 25px;
+}
+.header-ad {
+  width: 100%;
+  overflow: hidden;
+}
+.header-ad .img-ct {
+  height: 126px;
+  white-space: nowrap;
+  position: relative;
+}
+.header-ad span {
+  position: absolute;
+  display: inline-block;
+  width: 480px;
+  height: 100%;
+}
+.header-ad img {
+  width: 480px;
+  height: 185px;
+}
+/*页面组件*/
+header article {
+  display: block;
+  height: 44px;
+}
+header .logo {
+  display: block;
+  height: 44px;
+  width: 170px;
+  background: url("../images/4.png") no-repeat;
+  background-size: 100%;
+}
+header .search {
+  margin: 7px 10px 0 0;
+  width: 130px;
+  position: relative;
+}
+header .search img {
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  width: 15%;
+  height: 66%;
+}
+header .search input {
+  width: 60%;
+  height: 26px;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  padding-left: 34px;
+  font-size: 14px;
+  box-shadow: inset 0 3px 10px #dcdcdc;
+}
+header .menu {
+  width: 100%;
+  height: 42px;
+  background: url("../images/2.png") repeat-x;
+  color: #b4b4b4;
+}
+header .menu li {
+  font-size: 1.8rem;
+  display: inline-block;
+  line-height: 42px;
+  font-weight: bold;
+  width: 23%;
+  text-align: center;
+}
+header .menu li.active {
+  color: #81cf34;
+  background: url("../images/hsdf.png") repeat-x;
+}
+.list-top li {
+  line-height: 42px;
+  height: 42px;
+  font-size: 1.6rem;
+  padding-left: 8px;
+}
+.litte-block {
+  display: inline-block;
+}
+.litte-block article {
+  width: 44.5%;
+  padding: 10px 8px;
+}
+.litte-block article.one {
+  position: relative;
+}
+.litte-block dl {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
+.line-block li {
+  height: 78px;
+  padding: 12px 0 0 10px;
+}
+.line-block dl {
+  margin-left: 5px;
+}
+.line-block .app-down {
+  margin-top: 10px;
+  margin-right: 3px;
+}
+.bg-cut {
+  height: 44px;
+  line-height: 44px;
+  color: #fff;
+  color: #fffffD;
+}
+.loadmore {
+  width: 294px;
+  height: 35px;
+  margin: 20px auto;
+  line-height: 35px;
+  border: 1px solid #fd6801;
+  background: url("../images/3.png") repeat-x;
+  text-align: center;
+  border-radius: 4px;
+}
+.button {
+  border-radius: 4px;
+  border: 1px solid #78ac41;
+  display: inline-block;
+  padding: 0 20px;
+  text-align: center;
+  color: #4d8012;
+}
+.button-min {
+  padding: 0 14px;
+  height: 26px;
+  line-height: 26px;
+  background: url("../images/button-min.png") repeat-x;
+}
+.button-big {
+  height: 36px;
+  line-height: 36px;
+  background: url("../images/button-big.png") repeat-x;
+  padding: 0 12px;
+}
+.c-orange {
+  color: #fa6800;
+}
+.c-white {
+  color: #fffffD;
+}
+.bg-bluebg {
+  background: #81bed0;
+}
+.bg-orangebg {
+  background: #E3a360;
+}
+.icon-1 {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url("../images/1.png") no-repeat;
+}
+.dash-bd {
+  border: 1px dashed #b5b5b5;
+}
+.dash-buttom {
+  border-bottom: 1px dashed #b5b5b5;
+}
+.dash-left {
+  border-left: 1px dashed #b5b5b5;
+}
+.lab-tag {
+  width: 97%;
+  padding-left: 8px;
+  height: 34px;
+  border-top: 1px solid #999;
+}
+.lab-tag span {
+  line-height: 34px;
+  text-align: center;
+  display: inline-block;
+  color: #fefefe;
+  width: 110px;
+  background: url("../images/lab-tag.png") no-repeat;
+}
+ol.applist-nums li {
+  line-height: 27px;
+  height: 27px;
+  border-bottom: 1px dashed #b3b3b3;
+}
+ol.applist-nums li i {
+  font-size: 1.6em;
+  text-align: center;
+  width: 26px;
+  display: inline-block;
+  height: 27px;
+  background: url("../images/lit-num.png") no-repeat;
+}
+ol.applist-nums .num1 {
+  background-position: top top;
+}
+ol.applist-nums .num2 {
+  background-position: 0 32%;
+}
+ol.applist-nums .num3 {
+  background-position: 0 68%;
+}
+ol.applist-nums .num-more {
+  background-position: 0 100%;
+  color: white;
+  text-align: center;
+}
+.zhuanti-list li {
+  position: relative;
+  padding: 10px 8px;
+}
+.zhuanti-list img,
+.zhuanti-list .info {
+  display: inline-block;
+}
+.zhuanti-list .info {
+  position: absolute;
+  top: 20%;
+  margin-left: 10px;
+  width: 52%;
+}
+.zhuanti-list .detail {
+  margin-top: 5px;
+  display: inline-block;
+  line-height: 2rem;
+  height: 42.5px;
+  overflow: hidden;
+}
+.zhuanti-list .left-trigger {
+  float: right;
+  margin-top: 40px;
+}
+.game-cap {
+  width: 100%;
+  overflow: hidden;
+  height: 500px;
+  position: relative;
+}
+.game-cap .img-cont {
+  white-space: nowrap;
+  width: 300px;
+  height: 500px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.top-add {
+  height: 45px;
+  width: 100%;
+  background: #c4c7c6;
+  padding-top: 3px;
+  border-top: 1px solid #9da0a0;
+  position: relative;
+}
+.top-add .command {
+  background: url("../images/haowai.png") no-repeat;
+  width: 78px;
+  height: 74px;
+  background-size: 66%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.top-add h3 {
+  line-height: 45px;
+  background: #fff;
+  color: #009bff;
+  text-indent: 45px;
+}
+#rotate {
+  margin: 0 auto;
+  width: 600px;
+  height: 400px;
+  /* 确保我们是在一个 3-D 空间 */
+
+  -webkit-transform-style: preserve-3d;
+  /*让整个行使用x-轴旋转、7秒中的动画、无限次播放以及线性 */
+
+  -webkit-animation-name: x-spin;
+  -webkit-animation-duration: 7s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+/* 定义要调用的动画 */
+@-webkit-keyframes x-spin {
+  0% {
+    -webkit-transform: rotateX(0deg);
+  }
+  50% {
+    -webkit-transform: rotateX(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg);
+  }
+}
+.container{
+    display: block;
+    width: 100%;
+    height:200px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+}
+#target{
+    position:absolute; 
+    top: 0; 
+    left: 0; 
+    width: 300%; 
+    height: 100%; 
+    padding: 0;
+    z-index: 1;
+}
+#target .test{
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 33.33%;
+}
+#indexDom{
+    position: absolute;
+    z-index: 10;
+    bottom: 10px;
+    right: 10px;
+}
+#indexDom span{
+    display: inline-block;
+    background: blue;
+    width: 10px;
+    height: 10px;
+}

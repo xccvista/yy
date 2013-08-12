@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>云游</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="email=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<div class="wraper">
+    <!--头部 start-->
+    <header>
+        <article>
+            <div class="logo g-left"></div>
+            <div class="search g-right"><img src="images/5.png" width="23" height="24" alt="header img"/>
+			<input type="text" placeholder="搜索">
+            </div>
+        </article>
+        <ul class="menu">
+	        <% if (menu=='tuijian') { %>
+			    <li class="active">推介</li>
+			<% } else{ %>
+				<li class="">推介</li>
+			<% }%>
+           	
+	        <% if (menu=='danji') { %>
+			    <li class="active">单机</li>
+			<% } else{ %>
+				<li class="">单机</li>
+			<% }%>
+
+	        <% if (menu=='wangyou') { %>
+			    <li class="active">网游</li>
+			<% } else{ %>
+				<li class="">网游</li>
+			<% }%>
+
+	        <% if (menu=='zhuanti') { %>
+			    <li class="active">专题</li>
+			<% } else{ %>
+				<li class="">专题</li>
+			<% }%>
+
+            <li></li>
+            <!-- <li>论坛</li> -->
+        </ul>
+    </header>
+    <!--头部 end-->
