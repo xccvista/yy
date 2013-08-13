@@ -97,3 +97,11 @@ function update() {
     target.style.webkitTransform = 'rotate(' + Math.floor(position.rotation) + 'deg)';
     target.style.MozTransform = 'rotate(' + Math.floor(position.rotation) + 'deg)';
 }
+
+$.ajax({
+  url: "/loadMore",
+  context: document.body,
+  method:'post',
+}).done(function(data) {
+    console.log(data);
+});
