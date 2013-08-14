@@ -8,7 +8,7 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
-  // , dbtool=require('/dbtool/pgdbtool');
+  // , tools=require('/tools/pgdbtool');
 
 var app = express();
 
