@@ -26,7 +26,12 @@ exports.index = function(req, res){
 	kit.menu="tuijian";//推介menu
     apps.getAppsFromConfig("clean",0,function(result){
         kit.apps=result;
-        console.log(result);
+        // console.log(result);
+        for (var i = result.length - 1; i >= 0; i--) {
+        	result[i].size=(result[i].size/1048576).toFixed(2);
+        	result[i].tag=(result[i].tags+"").split(" ")[0];
+        };
+        console.log(kit);
         res.render('index', kit);
     });
 };

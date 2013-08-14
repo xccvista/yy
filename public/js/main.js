@@ -101,12 +101,74 @@ function update() {
     target.style.webkitTransform = 'rotate(' + Math.floor(position.rotation) + 'deg)';
     target.style.MozTransform = 'rotate(' + Math.floor(position.rotation) + 'deg)';
 }
-
-$.ajax({
+var pageIndex=0;
+//it is dirty code but i don't want to change it...
+$(".loadmore").click(function(){
+    if( pageIndex>=3){
+        $(this).html("没有更多了");
+        return false;
+    }
+    $.ajax({
     url: "/loadMore",
-    data: {page: "1"},
+    data: {page: pageIndex+1},
     context: document.body,
     method: 'post',
 }).done(function (data) {
-        console.log(data);
-    });
+    pageIndex=pageIndex+1;
+    console.log(data.page);
+    var det=data.page;
+    var str= 
+    '<article class="one g-left dash-buttom ">'+
+            '<img src="images/hehe.png" width=60 height=60 alt=""/>'+
+        '<dl>'+
+            '<dt class="fs12">'+det[0].name+'</dt>'+
+            '<dd class="fs12 fs-h12">'+det[0].tags+'&nbsp;&nbsp;'+det[0].size+'M</dd>'+
+            '<dd><a href="'+det[0].download_url+'"><span class="button button-min fs12">下载</span></a></dd>'+
+        '</dl>'+
+    '</article>'+
+     '<article class="one dash-left g-left dash-buttom">'+
+        '<img src="images/hehe.png" width=60 height=60 alt=""/>'+
+        '<dl>'+
+            '<dt class="fs12">'+det[1].name+'</dt>'+
+            '<dd class="fs12 fs-h12">'+det[1].tags+'&nbsp;&nbsp;'+det[1].size+'M</dd>'+
+            '<dd><a href="'+det[1].download_url+'"><span class="button button-min fs12">下载</span></a></dd>'+
+    '</article>'+
+        '<article class="one g-left dash-buttom ">'+
+            '<img src="images/hehe.png" width=60 height=60 alt=""/>'+
+        '<dl>'+
+            '<dt class="fs12">'+det[2].name+'</dt>'+
+            '<dd class="fs12 fs-h12">'+det[2].tags+'&nbsp;&nbsp;'+det[2].size+'M</dd>'+
+            '<dd><a href="'+det[2].download_url+'"><span class="button button-min fs12">下载</span></a></dd>'+
+        '</dl>'+
+    '</article>'+
+     '<article class="one dash-left g-left dash-buttom">'+
+        '<img src="images/hehe.png" width=60 height=60 alt=""/>'+
+        '<dl>'+
+            '<dt class="fs12">'+det[3].name+'</dt>'+
+            '<dd class="fs12 fs-h12">'+det[3].tags+'&nbsp;&nbsp;'+det[3].size+'M</dd>'+
+            '<dd><a href="'+det[3].download_url+'"><span class="button button-min fs12">下载</span></a></dd>'+
+        '</dl>'+
+    '</article>'+
+        '<article class="one g-left dash-buttom ">'+
+            '<img src="images/hehe.png" width=60 height=60 alt=""/>'+
+        '<dl>'+
+           '<dt class="fs12">'+det[4].name+'</dt>'+
+            '<dd class="fs12 fs-h12">'+det[4].tags+'&nbsp;&nbsp;'+det[4].size+'M</dd>'+
+            '<dd><a href="'+det[4].download_url+'"><span class="button button-min fs12">下载</span></a></dd>'+
+        '</dl>'+
+    '</article>'+
+     '<article class="one dash-left g-left dash-buttom">'+
+        '<img src="images/hehe.png" width=60 height=60 alt=""/>'+
+        '<dl>'+
+            '<dt class="fs12">'+det[5].name+'</dt>'+
+            '<dd class="fs12 fs-h12">'+det[5].tags+'&nbsp;&nbsp;'+det[5].size+'M</dd>'+
+            '<dd><a href="'+det[5].download_url+'"><span class="button button-min fs12">下载</span></a></dd>'+
+        '</dl>'+
+    '</article>';
+    $(".litte-block").append(str); 
+});
+
+
+
+});
+
