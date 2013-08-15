@@ -11,8 +11,8 @@ var client = new pg.Client({
     user: 'browser',
     password: 'browser',
     database: 'yunyou',
-    // host: '172.16.4.45',
-    host:'localhost',
+    host: '172.16.4.45',
+    // host:'localhost',
     port: 5432
 });
 // function()
