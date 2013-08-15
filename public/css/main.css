@@ -71,11 +71,23 @@ hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padd
 .fs20 {
   font-size: 2rem;
 }
+.c-orange{
+  color:#fc7f2c;
+}
 .c-white {
   color: #fff;
 }
+.c-bule{
+  color:#009BFF;
+}
 .c-gray {
-  color: #505050;
+  color:#505050;
+}
+.c-pink{
+  color:#ff6399;
+}
+.c-green{
+  color:#349B69;
 }
 .c-light-gray {
   color: #666;
